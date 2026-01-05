@@ -1,0 +1,475 @@
+/* Általános beállítások */
+:root {
+    --primary-color: #999966; /* Kék */
+    --secondary-color: #6c757d; /* Szürke */
+    --accent-color: #28a745; /* Zöld (pl. CTA gombokhoz) */
+    --text-color-dark: #343a40; /* Sötét szöveg */
+    --text-color-light: #f8f9fa; /* Világos szöveg */
+    --bg-light: #f8f9fa; /* Világos háttér */
+    --bg-dark: #364534; /* Sötét háttér (pl. footer) */
+    --border-color: #dee2e6;
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-dark);
+    background-color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: #999966;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color-dark);
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+/* Gombok */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+}
+
+.primary-btn:hover {
+    background-color: #999966;
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    margin-right: 10px;
+}
+
+.secondary-btn:hover {
+    background-color: #5a6268;
+}
+
+.btn i {
+    margin-left: 8px;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    padding: 20px 0;
+    box-shadow: var(--box-shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Reszponzívitás miatt */
+}
+
+.profile-info h1 {
+    color: var(--text-color-light);
+    font-size: 2.2rem;
+    margin-bottom: 0.1em;
+}
+
+.profile-info h2 {
+    color: var(--text-color-light);
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: var(--text-color-light);
+    font-weight: 400;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    left: 0;
+    bottom: -5px;
+    transition: width var(--transition-speed);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Profilkép a fejlécben */
+.profile-picture {
+    margin-right: 30px; /* Távolság a névtől */
+    flex-shrink: 0; /* Megakadályozza, hogy összenyomódjon */
+}
+
+.profile-picture img {
+    width: 150px; /* Kép szélessége */
+    height: 150px; /* Kép magassága */
+    border-radius: 50%; /* Ez teszi kör alakúvá! */
+    object-fit: cover; /* Fontos: kitölti a területet anélkül, hogy torzítaná a képet */
+    border: 3px solid var(--primary-color); /* Kék keret a kép körül */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Kis árnyék */
+}
+
+/* Reszponzív beállítás a profilképhez */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-picture {
+        margin-right: 0;
+        margin-bottom: 20px; /* Távolság a nevedtől mobil nézetben */
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x600/007bff/FFFFFF?text=Coding+Background') no-repeat center center/cover;
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color-light);
+}
+
+.hero-section .intro-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* Skills Section */
+.skills-section h2, .projects-section h2, .contact-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.skill-item {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-light);
+    transition: transform var(--transition-speed);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.skill-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.skill-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-light);
+    transition: transform var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Hogy a gombok alul legyenek, ha különböző a leírás hossza */
+}
+
+.project-tech-stack {
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+/* Contact Section */
+.contact-section p {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: var(--text-color-dark);
+}
+
+.contact-info a {
+    font-weight: 500;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    align-self: center; /* A gomb középre igazítása */
+    width: auto; /* A gomb szélessége a tartalomhoz igazodik */
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-links {
+    margin-top: 10px; /* Mobil nézetben távolság */
+}
+
+.social-links a {
+    color: var(--text-color-light);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav {
+        margin-top: 20px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-section .intro-text {
+        font-size: 1.3rem;
+    }
+
+    .skills-section h2, .projects-section h2, .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .skills-grid, .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .hero-section {
+        padding: 80px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section .intro-text {
+        font-size: 1.1rem;
+    }
+
+    .main-footer .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-info h2 {
+        font-size: 1rem;
+    }
+
+    .main-nav ul {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .skills-grid, .project-grid {
+        grid-template-columns: 1fr; /* Egy oszlop mobilnézetben */
+    }
+
+    .contact-info p, .contact-info a {
+        font-size: 1rem;
+    }
+}
