@@ -473,3 +473,26 @@ p {
         font-size: 1rem;
     }
 }
+/* Speciális badge a projekt típusának */
+.type-badge {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* A gomb ikonjának igazítása */
+.secondary-btn i {
+    margin-right: 8px;
+    margin-left: 0; /* Felülírja az alapértelmezett jobb oldali ikont */
+}
+
+.project-header h3 {
+    margin-top: 5px;
+}
